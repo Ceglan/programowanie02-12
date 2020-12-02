@@ -1,9 +1,12 @@
-on: [push, pull_request]  
+
+on: [push, pull_request]
 jobs:
-  zadanie:
-    strategy: 
+  job_id:
+    strategy:
       matrix:
-        platform: [ubuntu-latest, windows-latest, macos-lates]
-    runs-on: ${{matrix.platform}}
-    steps: 
-    - run: echo hello world
+        platform: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+    - run: g++ -o kart kart.cpp
+    - run: ./kart
+    - run: ./kart
