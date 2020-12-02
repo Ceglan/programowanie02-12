@@ -7,6 +7,7 @@ jobs:
         platform: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{ matrix.platform }}
     steps:
+    - uses: actions/checkout@v2
     - run: g++ -o kart kart.cpp
     - run: ./kart
     - run: ./kart
